@@ -1,0 +1,57 @@
+@import url('https://fonts.googleapis.com/css2?family=Lemonada:wght@500&display=swap');
+
+body {
+	background-image: url('../img/front.jpg');
+	background-size: cover;
+	background-repeat: no-repeat;
+}
+
+ul {
+	font-family: 'Lemonada', cursive;
+	font-size: 28px;
+	color: blanchedalmond;
+	text-decoration: none;
+	
+	display: flex;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: flex-start;
+    align-content: flex-start;
+    flex-direction: row;
+}
+
+li {
+	margin-right: 20px;
+	list-style-type: none;
+}
+
+a {
+	text-decoration:none;
+}
+
+a:link{
+	color: blanchedalmond;
+	text-decoration: none;
+}
+
+a:hover {
+    border-bottom: 1px dashed rgb(255, 0, 55);
+}
+
+.content {
+	display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    flex-direction: column;
+}
+
+h1 {
+	font-size: 101px;
+	color: rgb(133, 130, 127);
+	display: flex;
+    justify-content: flex-end;
+    align-items:flex-end;
+    flex-direction: column;
+	opacity: 60%;
+	
+}
