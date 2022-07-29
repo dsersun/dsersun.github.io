@@ -1,5 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Lemonada:wght@500&display=swap');
-
+@import "font_set.scss";
 body {
 	background-image: url('../img/front.jpg');
 	background-size: cover;
@@ -7,11 +6,8 @@ body {
 }
 
 ul {
-	font-family: 'Lemonada', cursive;
+	font-family:'Onest',Arial,sans-serif;
 	font-size: 28px;
-	color: blanchedalmond;
-	text-decoration: none;
-	
 	display: flex;
     flex-wrap: nowrap;
     justify-content: center;
@@ -26,32 +22,36 @@ li {
 }
 
 a {
+	color: blanchedalmond;
 	text-decoration:none;
 }
 
-a:link{
-	color: blanchedalmond;
+a:link a:visited {
 	text-decoration: none;
 }
 
 a:hover {
-    border-bottom: 1px dashed rgb(255, 0, 55);
+    border-bottom: 1px dashed rgb(130, 131, 130);
 }
 
 .content {
 	display: flex;
     justify-content: flex-end;
-    align-items: center;
+    align-items: flex-start;
     flex-direction: column;
+	padding-top: 40px;
+	padding-left: 30px;
 }
 
 h1 {
-	font-size: 101px;
-	color: rgb(133, 130, 127);
+	font-size: 111px;
+	font-family:'Onest',Arial,sans-serif;
+	font-weight:800;
+	color: rgb(248, 244, 239);
 	display: flex;
     justify-content: flex-end;
     align-items:flex-end;
     flex-direction: column;
-	opacity: 60%;
+	opacity: 40%;
 	
 }
