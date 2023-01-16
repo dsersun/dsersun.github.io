@@ -1,1 +1,114 @@
-calculator
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-GWFV6MZV0Y"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-GWFV6MZV0Y');
+</script>
+	<meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="Web service - calcular motorina" />
+    <meta name="author" content="Șerșun Denis / Денис Шершун" />
+    <title>Calculator Motorina</title>   
+    
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+    rel="stylesheet">
+   
+    <link rel="stylesheet" href="/static/css/calcular.css">
+</head>
+<body>
+        <div class="first_screen">
+            <h4><a href="https://dsersun.github.io/">Перейти на главную страницу!</a></h4>
+        <div class="first_screen__content">
+            <p>Онлайн калькулятор расхода топлива грузового автомобиля</p>
+        </div>
+    </div>
+
+    <div class="row s12">
+        <form class="col s6">
+            <div class="row btn-padding">
+            <div class="input-field col s6">
+              <input id="total_parcurs" type="number" class="validate deep-orange-text" autocomplete="off" autofocus>
+              <label for="total_parcurs">Parcurs Total (km)</label>
+            </div>
+            <div class="input-field col s6">
+              <input id="parcurs_incarcat" type="number" class="validate deep-orange-text" autocomplete="off">
+              <label for="parcurs_incarcat">Parcurs cu încărcatura (km)</label>
+            </div>
+            </div>
+
+            <div class="row btn-padding">
+                <div class="input-field col s6">
+                    <input id="greutatea" type="number" class="validate deep-orange-text" autocomplete="off">
+                    <label for="greutatea">Greutatea incarcaturii (tone):</label>
+                </div>
+                <div class="col s6">
+                    <label for="norma_consum">Alege norma specifică de consum</label>
+                <div class="label_wrapper">
+                <label>
+                  <input class="with-gap-1" name="norma_consum"
+                  value="0.314" type="radio" id="norma_consum" />
+                  <span>0.314</span>
+                </label>
+              
+                <label>
+                  <input class="with-gap-1" name="norma_consum" type="radio" value="0.278" id="norma_consum"/>
+                  <span>0.278</span>
+                </label>
+            
+                <label>
+                  <input class="with-gap-1" name="norma_consum" type="radio" value="0.308" id="norma_consum"/>
+                  <span>0.308</span>
+                </label>
+
+                <label>
+                    <input class="with-gap-1" name="norma_consum" type="radio" value="0.273" id="norma_consum"/>
+                    <span>0.273</span>
+                </label>
+                </div>
+            </div>
+            </div> 
+            <div class="row btn-padding">
+                <div class="input-field col s12">
+                    <input id="norma_consum_manuala" type="number" class="validate deep-orange-text" autocomplete="off">
+                    <label for="norma_consum_manuala">sau introduce manual norma specifică de consum</label>
+                </div>
+            </div> 
+        </form>
+        <div class="col s6">
+            <h4 class="deep-orange-text"><strong>Rezultate:</strong></h4>
+            <section>
+                <div>
+                    <p class="grey-text"><strong>Total distanta parcursa:</strong> <span class="result" id="parcurs"></span></p>
+                    <p class="grey-text"><strong>Tono-KM parcursi:</strong> <span class="result" id="tkm"></span></p>
+                    <p class="grey-text"><strong>Combustibil consumat (litri): </strong><span class="result" id="consumat"></span></p>
+                </div>
+            </section>
+            <span class="Display-2" id="alert"></span>
+        </div>
+      </div>
+      <div class="input-field col s12 btn-padding">
+        <button class="waves-effect deep-orange accent-4 btn" type="button" onclick="calc()">
+            <i class="material-icons left">calculate</i>Calculează
+        </button>
+        <button class="waves-effect deep-orange accent-4 btn" type="reset" onclick="reset()">
+            <i class="material-icons left">delete_outline</i>Curăță
+        </button>
+    </div>
+
+
+<script src="/static/js/calcular.js"></script>
+<!-- Compiled and minified JavaScript -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+            
+
+</body>
+</html>
