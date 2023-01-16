@@ -22,9 +22,14 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
     rel="stylesheet">
    
-    <link rel="stylesheet" href="/static/css/calcular.css">
+    <link rel="stylesheet" href="static/css/calcular.css">
 </head>
 <body>
+
+<script type="text/javascript">
+function calc(){let e=document.getElementById("total_parcurs").value,t=document.getElementById("parcurs_incarcat").value,n=document.getElementById("greutatea").value,a=document.querySelector('input[name="norma_consum"]:checked').value,m=document.getElementById("norma_consum_manuala").value;if(""==m?norma_consum=a:(norma_consum=m,document.querySelector('input[name="norma_consum"]:checked').checked=!1),0==e.length?e=0:(e=parseFloat(Math.abs(e)).toFixed(2),console.log(e)),0==t.length?t=0:(t=Math.abs(t),console.log(t)),0==n.length?n=0:(n=Math.abs(n),console.log(n)),0==norma_consum.length?norma_consum=0:norma_consum=norma_consum,e<t){console.log(e," - ",t);document.getElementById("alert").innerHTML="Atentie! Distanta TOTALA parcursa este mai mica decit distanta cu incarcatura!";alert("Atentie! Distanta TOTALA parcursa este mai mica decit distanta cu incarcatura"),document.getElementById("total_parcurs").focus()}else{let a=(t*n).toFixed(2),m=(1.3*a/100+e*norma_consum).toFixed(2);document.getElementById("alert").innerHTML=" ",document.getElementById("parcurs").innerHTML=e;if("NaN"==a){document.getElementById("tkm").innerHTML="eror"}else{document.getElementById("tkm").innerHTML=a}if("NaN"==m){document.getElementById("consumat").innerHTML="eror"}else{document.getElementById("consumat").innerHTML=m}}}function reset(){document.getElementById("parcurs").innerHTML="",document.getElementById("tkm").innerHTML="",document.getElementById("consumat").innerHTML="",document.getElementById("alert").innerHTML="",document.getElementById("total_parcurs").value="",document.getElementById("parcurs_incarcat").value="",document.getElementById("greutatea").value="",document.getElementById("norma_consum_manuala").value="";document.getElementById("total_parcurs").focus()}
+</script>
+	
         <div class="first_screen">
             <h4><a href="https://dsersun.github.io/">Перейти на главную страницу!</a></h4>
         <div class="first_screen__content">
@@ -104,89 +109,6 @@
         </button>
     </div>
 
-
-<script type="text/javascript">
-function calc() {
-    // get input data
-
-    let total_parcurs = document.getElementById("total_parcurs").value;
-    let parcurs_incarcat = document.getElementById("parcurs_incarcat").value;
-    let greutatea = document.getElementById("greutatea").value;
-    let norma_consum = document.getElementById("norma_consum").value;
-
-   
-    // verify, normalize, convert and round input data
-    if (total_parcurs.length==0) {
-        total_parcurs = 0;
-    } else {
-        total_parcurs = parseFloat(Math.abs(total_parcurs)).toFixed(2);
-        console.log(total_parcurs);
-    }
-
-    if (parcurs_incarcat.length==0) {
-        parcurs_incarcat = 0;
-    } else {
-        // parcurs_incarcat = parseFloat(Math.abs(parcurs_incarcat)).toFixed(2); a dat eroare la testare
-        parcurs_incarcat = Math.abs(parcurs_incarcat);
-        console.log(parcurs_incarcat);
-    }
-
-    if (greutatea.length==0) {
-        greutatea = 0;
-    } else {
-       //  greutatea = parseFloat(Math.abs(greutatea)).toFixed(2); a dat eroare la testare
-        greutatea = Math.abs(greutatea);
-        console.log(greutatea);
-    }
-
-    if (norma_consum.length==0) {
-        norma_consum = 0
-    } else {
-        norma_consum = norma_consum;
-    }
-    
-    if (total_parcurs < parcurs_incarcat) {
-        console.log(total_parcurs, " - ", parcurs_incarcat)
-        let element = document.getElementById("alert").innerHTML =
-        "Atentie! Distanta TOTALA parcursa este mai mica decit distanta cu incarcatura";
-        alert("Atentie! Distanta TOTALA parcursa este mai mica decit distanta cu incarcatura");
-        document.getElementById("total_parcurs").focus()
-    } else {
-        // calculate
-        let tkm = parcurs_incarcat * greutatea;
-        let consumat = ((tkm * 1.3 /100) + (total_parcurs * norma_consum)).toFixed(2);
-        let element = document.getElementById("alert").innerHTML = " ";
-
-              // result and verification from NaN eror
-        if ( tkm == "NaN") {
-            let element1 = document.getElementById("tkm").innerHTML = "eror";
-        } else {
-            let element1 = document.getElementById("tkm").innerHTML = tkm;
-        }
-
-        if ( consumat == "NaN") {
-            let element2 = document.getElementById("consumat").innerHTML = "eror";
-        } else {
-            let element2 = document.getElementById("consumat").innerHTML = consumat;
-        }
-    }
-
-    
-
-}
-
-function reset() { // function reset form feelds
-    let element1 = document.getElementById("tkm").innerHTML = "";
-    let element2 = document.getElementById("consumat").innerHTML = "";   
-    let element = document.getElementById("alert").innerHTML = "";
-
-    let total_parcurs = document.getElementById("total_parcurs").value = "";
-    let parcurs_incarcat = document.getElementById("parcurs_incarcat").value = "";
-    let greutatea = document.getElementById("greutatea").value = "";
-    let norma_consum = document.getElementById("norma_consum").value = "";
-    document.getElementById("total_parcurs").focus()
-}
-</script>
 	
 <!-- Compiled and minified JavaScript -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
